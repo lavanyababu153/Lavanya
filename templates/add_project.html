@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Project | Portfolio Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #020617;
+            color: #f1f5f9;
+            background-image: radial-gradient(#1e1b4b 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        .glass-card {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+        }
+
+        .form-control {
+            width: 100%;
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            padding: 14px;
+            border-radius: 12px;
+            color: white;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: #ec4899; /* Pink focus for projects */
+            box-shadow: 0 0 15px rgba(236, 72, 153, 0.2);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.7rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: #a855f7;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen px-6 py-12">
+
+    <div class="max-w-2xl w-full glass-card p-10 md:p-14 rounded-[3rem] shadow-2xl">
+        <div class="mb-10">
+            <div class="flex items-center gap-4 mb-4">
+                <i class="fas fa-rocket text-pink-500 text-2xl"></i>
+                <h1 class="text-3xl font-black tracking-tighter text-white">NEW_<span class="text-pink-500">PROJECT</span></h1>
+            </div>
+            <p class="text-slate-500 text-sm">Showcase your latest builds, from Django backends to Flutter UIs.</p>
+        </div>
+
+        <form method="POST" class="space-y-6">
+            {% csrf_token %}
+
+            <div class="grid grid-cols-1 gap-6">
+                <div>
+                    <label>Project Title</label>
+                    <input type="text" name="title" placeholder="e.g., Movie Streaming Website" required class="form-control">
+                </div>
+
+                <div>
+                    <label>Technology Stack</label>
+                    <input type="text" name="stack" placeholder="e.g., Python, Django, PostgreSQL" required class="form-control">
+                </div>
+
+                <div>
+                    <label>GitHub Repository URL</label>
+                    <input type="url" name="github_link" placeholder="https://github.com/lavanyababu153/..." class="form-control">
+                </div>
+
+                <div>
+                    <label>Detailed Features</label>
+                    <textarea name="features" rows="5" placeholder="List key functionalities (e.g., User Authentication, API Integration, etc.)" required class="form-control"></textarea>
+                </div>
+            </div>
+
+            <div class="pt-6 flex gap-4">
+                <button type="submit" class="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-black py-4 rounded-2xl tracking-widest text-xs uppercase transition-all shadow-lg shadow-purple-500/20">
+                    Publish_Project
+                </button>
+                <a href="/" class="px-8 border border-slate-700 bg-slate-800/30 hover:bg-slate-800 text-slate-400 font-black py-4 rounded-2xl text-center text-xs tracking-widest uppercase transition-all">
+                    Cancel
+                </a>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

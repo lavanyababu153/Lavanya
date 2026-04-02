@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavanya | Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { background-color: #020617; color: #f1f5f9; }
+        .glass-card { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(168, 85, 247, 0.1); }
+        .sidebar { background: #0f172a; border-right: 1px solid #1e293b; }
+        .stat-card { border-left: 4px solid #a855f7; }
+    </style>
+</head>
+<body class="flex min-h-screen">
+
+    <aside class="w-64 sidebar hidden md:flex flex-col p-6 sticky top-0 h-screen">
+        <div class="mb-10">
+            <h1 class="text-2xl font-black tracking-tighter text-purple-500">ADMIN<span class="text-white">_LB</span></h1>
+        </div>
+
+        <nav class="space-y-4 flex-1">
+            <a href="{% url 'admin_dashboard' %}" class="flex items-center gap-3 text-purple-400 bg-purple-500/10 p-3 rounded-xl font-bold">
+                <i class="fas fa-chart-pie"></i> Dashboard
+            </a>
+            <a href="{% url 'home' %}" class="flex items-center gap-3 text-slate-400 hover:text-white p-3 rounded-xl transition">
+                <i class="fas fa-external-link-alt"></i> View Site
+            </a>
+        </nav>
+
+        <div class="pt-6 border-t border-slate-800">
+            <p class="text-[10px] font-bold text-slate-600 uppercase tracking-widest">Logged in as Lavanya</p>
+        </div>
+    </aside>
+
+    <main class="flex-1 p-8">
+
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
+            <div>
+                <h2 class="text-3xl font-black text-white">Console Overview</h2>
+                <p class="text-slate-500">Manage your professional portfolio data[cite: 5, 8].</p>
+            </div>
+            <div class="flex gap-3">
+                <a href="{% url 'add_experience' %}" class="bg-purple-600 hover:bg-purple-500 px-4 py-2 rounded-lg text-xs font-bold transition">+ EXP</a>
+                <a href="{% url 'add_project' %}" class="bg-pink-600 hover:bg-pink-500 px-4 py-2 rounded-lg text-xs font-bold transition">+ PROJECT</a>
+                <a href="{% url 'add_certificate' %}" class="bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-lg text-xs font-bold transition">+ CERT</a>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            <div class="glass-card p-6 rounded-2xl stat-card">
+                <p class="text-slate-500 text-xs font-bold uppercase tracking-widest">Total Experience</p>
+                <h3 class="text-3xl font-black mt-2 text-white">{{ exp_count }}</h3>
+            </div>
+            <div class="glass-card p-6 rounded-2xl border-l-4 border-pink-500">
+                <p class="text-slate-500 text-xs font-bold uppercase tracking-widest">Live Projects</p>
+                <h3 class="text-3xl font-black mt-2 text-white">{{ proj_count }}</h3>
+            </div>
+            <div class="glass-card p-6 rounded-2xl border-l-4 border-blue-500">
+                <p class="text-slate-500 text-xs font-bold uppercase tracking-widest">Certifications</p>
+                <h3 class="text-3xl font-black mt-2 text-white">{{ cert_count }}</h3>
+            </div>
+        </div>
+
+        <div class="space-y-8">
+
+            <div class="glass-card rounded-[2rem] overflow-hidden">
+                <div class="p-6 border-b border-slate-800 flex justify-between items-center">
+                    <h4 class="font-bold text-purple-400 uppercase tracking-widest text-sm">Experience History</h4>
+                </div>
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-slate-800/50 text-[10px] uppercase text-slate-500 font-black">
+                        <tr>
+                            <th class="p-4">Role</th>
+                            <th class="p-4">Company</th>
+                            <th class="p-4">Duration</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        {% for exp in experiences %}
+                        <tr class="border-t border-slate-800 hover:bg-white/5 transition">
+                            <td class="p-4 font-bold text-white">{{ exp.role }}</td>
+                            <td class="p-4">{{ exp.company }} [cite: 23, 30]</td>
+                            <td class="p-4 text-slate-500 font-mono">{{ exp.duration }} [cite: 31]</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="glass-card rounded-[2rem] overflow-hidden">
+                <div class="p-6 border-b border-slate-800">
+                    <h4 class="font-bold text-pink-400 uppercase tracking-widest text-sm">Active Projects</h4>
+                </div>
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-slate-800/50 text-[10px] uppercase text-slate-500 font-black">
+                        <tr>
+                            <th class="p-4">Project Title</th>
+                            <th class="p-4">Stack Used</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        {% for proj in projects %}
+                        <tr class="border-t border-slate-800 hover:bg-white/5 transition">
+                            <td class="p-4 font-bold text-white">{{ proj.title }} [cite: 39, 45, 50, 58, 64]</td>
+                            <td class="p-4 text-pink-500 text-xs font-bold">{{ proj.stack }} [cite: 40, 46, 51, 59, 65]</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>
