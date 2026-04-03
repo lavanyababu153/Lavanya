@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lavanya Babu | Python Django & Flutter Developer</title>
+    <title>Lavanya Babu | Professional Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -15,14 +15,12 @@
 
         html { scroll-behavior: smooth; }
 
-        /* Dark Theme Overrides */
         body {
             background-color: var(--deep-black);
             color: #e2e8f0;
             overflow-x: hidden;
         }
 
-        /* Unique Feature: Custom Neon Cursor (Hidden on mobile) */
         #custom-cursor {
             width: 20px; height: 20px;
             background: var(--accent-purple);
@@ -37,10 +35,8 @@
         }
         @media (min-width: 1024px) { #custom-cursor { display: block; } }
 
-        /* Custom Glowing Effect - Purple */
         .glow-purple { box-shadow: 0 0 30px rgba(168, 85, 247, 0.2); }
 
-        /* Floating Animation */
         @keyframes float {
             0% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-15px) rotate(2deg); }
@@ -48,7 +44,6 @@
         }
         .floating { animation: float 4s ease-in-out infinite; }
 
-        /* Animated Background Grid - Dark Version */
         .bg-grid {
             background-size: 50px 50px;
             background-image: radial-gradient(circle, #1a1a1a 1px, transparent 1px);
@@ -72,7 +67,6 @@
             to { background-position: 200% center; }
         }
 
-        /* Glassmorphism for Cards */
         .glass-card {
             background: rgba(20, 20, 20, 0.6);
             backdrop-filter: blur(10px);
@@ -96,7 +90,7 @@
             <div class="hidden md:flex items-center space-x-10 text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
                 <a href="#about" class="hover:text-purple-500 transition">About</a>
                 <a href="#experience" class="hover:text-purple-500 transition">Experience</a>
-                <a href="#education" class="hover:text-purple-500 transition">Education</a>
+                <a href="#skills" class="hover:text-purple-500 transition">Skills</a>
                 <a href="#projects" class="hover:text-purple-500 transition">Projects</a>
                 <a href="mailto:lavanyababu153@gmail.com" class="bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition shadow-lg shadow-purple-900/40">Contact</a>
             </div>
@@ -106,22 +100,26 @@
     <section id="about" class="relative pt-44 pb-32 px-6 overflow-hidden">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between relative z-10">
             <div class="md:w-3/5" data-aos="fade-right" data-aos-duration="1000">
-
                 <h1 class="text-6xl md:text-8xl font-black leading-tight tracking-tighter mb-8">
-                    Building <span class="gradient-text">Scalable</span> <br>Backend Logic.
+                    Professional <br><span class="gradient-text">Portfolio</span> Website.
                 </h1>
-
                 <p class="text-xl text-slate-400 leading-relaxed max-w-2xl mb-10">
                     Hi, I'm <span class="text-white font-bold">Lavanya Babu</span>. A Software Associate specialized in <span class="text-purple-400">Django backends</span> and <span class="text-purple-400">Flutter mobile</span> interfaces.
                 </p>
+
+                <div class="flex flex-col gap-2 mb-8 font-mono text-sm">
+                    <a href="tel:+918086857303" class="text-purple-400 hover:text-purple-300 transition flex items-center gap-2">
+                        <i class="fas fa-phone-alt"></i> +91 8086857303
+                    </a>
+                    <a href="mailto:lavanyababu153@gmail.com" class="text-purple-400 hover:text-purple-300 transition flex items-center gap-2">
+                        <i class="fas fa-envelope"></i> lavanyababu153@gmail.com
+                    </a>
+                </div>
 
                 <div class="flex flex-wrap gap-4">
                     <a href="#projects" class="bg-purple-600 text-white px-10 py-5 rounded-2xl font-bold hover:scale-105 transition-transform shadow-xl shadow-purple-900/20">Explore Projects</a>
                     <a href="https://github.com/lavanyababu153" target="_blank" class="bg-zinc-900 border border-zinc-800 text-white px-6 py-5 rounded-2xl font-bold hover:bg-zinc-800 transition flex items-center gap-2 shadow-sm">
                         <i class="fab fa-github"></i> GitHub
-                    </a>
-                    <a href="tel:+918086857303" class="bg-zinc-900 border border-zinc-800 text-white px-6 py-5 rounded-2xl font-bold hover:bg-zinc-800 transition flex items-center gap-2 shadow-sm">
-                        <i class="fas fa-phone-alt text-purple-500"></i> +918086857303
                     </a>
                 </div>
             </div>
@@ -154,42 +152,93 @@
             </div>
 
             <div class="space-y-6">
-                {% for job in experiences %}
-                <div class="group glass-card p-10 rounded-[2.5rem] flex flex-col md:flex-row justify-between items-center" data-aos="fade-up">
+                <div class="group glass-card p-10 rounded-[2.5rem] flex flex-col md:flex-row justify-between items-center transition-all hover:bg-zinc-900/50" data-aos="fade-up">
                     <div class="md:w-1/4 mb-4 md:mb-0">
-                        <span class="text-purple-400/60 font-mono text-lg">{{ job.duration }}</span>
+                        <span class="text-purple-400 font-mono text-lg">Nov 2025 — Present</span>
                     </div>
                     <div class="md:w-2/4 text-center md:text-left">
-                        <h4 class="text-2xl font-black mb-1 group-hover:text-purple-400 transition-colors text-white">{{ job.role }}</h4>
-                        <p class="text-slate-500 font-bold">{{ job.company }}</p>
+                        <h4 class="text-2xl font-black mb-1 group-hover:text-purple-400 transition-colors text-white">Software Associate</h4>
+                        <p class="text-slate-400 font-bold mb-3">Regional Technologies</p>
+                        <ul class="text-slate-500 text-sm space-y-1 list-disc list-inside">
+                            <li>Developed Flutter-based mobile applications with REST API integration.</li>
+                            <li>Converted UI/UX designs into responsive Flutter screens.</li>
+                            <li>Collaborated with backend developers to integrate Django-based APIs.</li>
+                        </ul>
                     </div>
                     <div class="md:w-1/4 flex flex-wrap gap-2 md:justify-end mt-4 md:mt-0">
-                        <span class="bg-purple-900/30 text-purple-400 border border-purple-500/20 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">{{ job.stack }}</span>
+                        <span class="bg-purple-900/30 text-purple-400 border border-purple-500/20 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">Flutter // Django</span>
                     </div>
                 </div>
-                {% endfor %}
+
+                <div class="group glass-card p-10 rounded-[2.5rem] flex flex-col md:flex-row justify-between items-center transition-all hover:bg-zinc-900/50" data-aos="fade-up" data-aos-delay="100">
+                    <div class="md:w-1/4 mb-4 md:mb-0">
+                        <span class="text-slate-500 font-mono text-lg">Sep 2024 — Apr 2025</span>
+                    </div>
+                    <div class="md:w-2/4 text-center md:text-left">
+                        <h4 class="text-2xl font-black mb-1 group-hover:text-purple-400 transition-colors text-white">Python Developer Intern</h4>
+                        <p class="text-slate-400 font-bold mb-3">Irohub Infotech, Kochi</p>
+                        <ul class="text-slate-500 text-sm space-y-1 list-disc list-inside">
+                            <li>Developed Python-based web applications using Django.</li>
+                            <li>Worked on database design, backend logic, and API development.</li>
+                            <li>Improved code quality through team collaboration and reviews.</li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/4 flex flex-wrap gap-2 md:justify-end mt-4 md:mt-0">
+                        <span class="bg-zinc-800 text-slate-400 border border-zinc-700 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">Python // Django</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="education" class="py-32 px-6">
+    <section id="skills" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-20 text-center" data-aos="fade-up">
+                <h2 class="text-xs font-bold text-purple-500 uppercase tracking-[0.4em] mb-4">Tech Stack</h2>
+                <h3 class="text-5xl font-black uppercase tracking-tighter text-white">Skills_Expertise</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="glass-card p-8 rounded-3xl" data-aos="fade-up">
+                    <h4 class="text-purple-400 font-black mb-4 uppercase tracking-widest text-sm">Languages</h4>
+                    <p class="text-white text-lg font-bold">Python, SQL</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="100">
+                    <h4 class="text-purple-400 font-black mb-4 uppercase tracking-widest text-sm">Mobile Development</h4>
+                    <p class="text-white text-lg font-bold">Flutter, Android Studio</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="text-purple-400 font-black mb-4 uppercase tracking-widest text-sm">Web Technologies</h4>
+                    <p class="text-white text-lg font-bold">HTML, CSS, JavaScript</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl" data-aos="fade-up">
+                    <h4 class="text-purple-400 font-black mb-4 uppercase tracking-widest text-sm">Frameworks</h4>
+                    <p class="text-white text-lg font-bold">Django</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="100">
+                    <h4 class="text-purple-400 font-black mb-4 uppercase tracking-widest text-sm">Databases</h4>
+                    <p class="text-white text-lg font-bold">MySQL, SQLite</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="py-32 px-6 bg-zinc-950/50">
         <div class="max-w-7xl mx-auto">
             <div class="mb-20 text-center" data-aos="fade-up">
                 <h2 class="text-xs font-bold text-purple-500 uppercase tracking-[0.4em] mb-4">Credentials</h2>
                 <h3 class="text-5xl font-black uppercase tracking-tighter text-white">Education_Details</h3>
             </div>
-
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="glass-card p-10 rounded-[2.5rem]" data-aos="fade-right">
                     <span class="text-purple-500 font-mono text-sm uppercase tracking-widest mb-4 block">2022 — 2024</span>
                     <h4 class="text-2xl font-black mb-2 text-white">Master of Computer Applications (MCA)</h4>
-                    <p class="text-slate-500 font-bold mb-4 text-sm leading-relaxed">MES Advanced Institute of Management and Technology</p>
+                    <p class="text-slate-500 font-bold mb-4 text-sm leading-relaxed">MES AIMAT</p>
                     <div class="flex items-center gap-2 bg-purple-900/20 w-fit px-4 py-2 rounded-full border border-purple-500/20">
                         <span class="text-xs font-black uppercase tracking-tighter text-purple-300">Result:</span>
                         <span class="text-purple-400 font-black">71%</span>
                     </div>
                 </div>
-
                 <div class="glass-card p-10 rounded-[2.5rem]" data-aos="fade-left">
                     <span class="text-purple-500 font-mono text-sm uppercase tracking-widest mb-4 block">2019 — 2022</span>
                     <h4 class="text-2xl font-black mb-2 text-white">Bachelor of Computer Applications (BCA)</h4>
@@ -203,38 +252,91 @@
         </div>
     </section>
 
-    <section id="projects" class="py-32 px-6 bg-zinc-950/50">
+    <section id="projects" class="py-32 px-6">
         <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-20" data-aos="fade-up">
-                <div>
-                    <h2 class="text-xs font-bold text-purple-500 uppercase tracking-[0.4em] mb-4">Portfolio</h2>
-                    <h3 class="text-5xl font-black uppercase tracking-tighter text-white">Selected_Works</h3>
-                </div>
+            <div class="mb-20" data-aos="fade-up">
+                <h2 class="text-xs font-bold text-purple-500 uppercase tracking-[0.4em] mb-4">Portfolio</h2>
+                <h3 class="text-5xl font-black uppercase tracking-tighter text-white">Selected_Works</h3>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                {% for project in projects %}
-                <div class="group relative bg-zinc-900 rounded-[2rem] p-10 overflow-hidden h-[400px] flex flex-col justify-between transition-all hover:-translate-y-2 border border-white/5" data-aos="zoom-in-up">
-                    <i class="fas fa-code absolute -right-10 -bottom-10 text-[15rem] text-purple-500/5 rotate-12"></i>
-
+                <div class="group relative bg-zinc-900 rounded-[2rem] p-10 overflow-hidden h-[450px] flex flex-col justify-between transition-all hover:-translate-y-2 border border-white/5" data-aos="zoom-in-up">
                     <div class="relative z-10">
                         <div class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center text-white mb-6 shadow-lg shadow-purple-900/50">
-                            <i class="fas fa-rocket"></i>
+                            <i class="fas fa-play"></i>
                         </div>
-                        <h4 class="text-2xl font-black text-white mb-4 uppercase tracking-tight">{{ project.title }}</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">{{ project.features }}</p>
+                        <h4 class="text-2xl font-black text-white mb-4 uppercase tracking-tight">Movie Streaming Site</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Developed using Python/Django. Features authentication, email notifications for payments, and video file handling.</p>
                     </div>
-
                     <div class="relative z-10">
-                        <div class="mb-6">
-                            <span class="text-[10px] font-black text-purple-400 uppercase tracking-widest">{{ project.stack }}</span>
-                        </div>
-                        <a href="{{ project.github_link }}" class="inline-flex items-center gap-3 text-white font-black text-xs group-hover:gap-5 transition-all">
-                            VIEW PROJECT <i class="fas fa-arrow-right text-purple-500"></i>
-                        </a>
+                        <span class="text-[10px] font-black text-purple-400 uppercase tracking-widest">Django // JS // Bootstrap</span>
                     </div>
                 </div>
-                {% endfor %}
+
+                <div class="group relative bg-zinc-900 rounded-[2rem] p-10 overflow-hidden h-[450px] flex flex-col justify-between transition-all hover:-translate-y-2 border border-white/5" data-aos="zoom-in-up" data-aos-delay="100">
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center text-white mb-6 shadow-lg shadow-purple-900/50">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4 class="text-2xl font-black text-white mb-4 uppercase tracking-tight">Smart Ration System</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Flutter app with Django backend. Modules for Admin, User, and Delivery roles with real-time tracking.</p>
+                    </div>
+                    <div class="relative z-10">
+                        <span class="text-[10px] font-black text-purple-400 uppercase tracking-widest">Flutter // Python // SQL</span>
+                    </div>
+                </div>
+
+                <div class="group relative bg-zinc-900 rounded-[2rem] p-10 overflow-hidden h-[450px] flex flex-col justify-between transition-all hover:-translate-y-2 border border-white/5" data-aos="zoom-in-up" data-aos-delay="200">
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center text-white mb-6 shadow-lg shadow-purple-900/50">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <h4 class="text-2xl font-black text-white mb-4 uppercase tracking-tight">Expense Tracker</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Financial application with custom categories, income/expense calculations, and secure user login.</p>
+                    </div>
+                    <div class="relative z-10">
+                        <span class="text-[10px] font-black text-purple-400 uppercase tracking-widest">Django // Python // JS</span>
+                    </div>
+                </div>
+
+                <div class="group relative bg-zinc-900 rounded-[2rem] p-10 overflow-hidden h-[450px] flex flex-col justify-between transition-all hover:-translate-y-2 border border-white/5" data-aos="zoom-in-up">
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center text-white mb-6 shadow-lg shadow-purple-900/50">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h4 class="text-2xl font-black text-white mb-4 uppercase tracking-tight">Memora - Gift App</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Personalized gift platform with photo previews. Built using Flutter and Django backend.</p>
+                    </div>
+                    <div class="relative z-10">
+                        <span class="text-[10px] font-black text-purple-400 uppercase tracking-widest">Flutter // Django // MySQL</span>
+                    </div>
+                </div>
+
+                <div class="group relative bg-zinc-900 rounded-[2rem] p-10 overflow-hidden h-[450px] flex flex-col justify-between transition-all hover:-translate-y-2 border border-white/5" data-aos="zoom-in-up" data-aos-delay="100">
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center text-white mb-6 shadow-lg shadow-purple-900/50">
+                            <i class="fas fa-cloud-sun"></i>
+                        </div>
+                        <h4 class="text-2xl font-black text-white mb-4 uppercase tracking-tight">Weather Forecast App</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Real-time weather data fetching via API integration. Features a sleek glassmorphism UI.</p>
+                    </div>
+                    <div class="relative z-10">
+                        <span class="text-[10px] font-black text-purple-400 uppercase tracking-widest">Django // OpenWeatherMap API</span>
+                    </div>
+                </div>
+
+                <div class="group relative bg-zinc-900 rounded-[2rem] p-10 overflow-hidden h-[450px] flex flex-col justify-between transition-all hover:-translate-y-2 border border-white/5" data-aos="zoom-in-up" data-aos-delay="200">
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center text-white mb-6 shadow-lg shadow-purple-900/50">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h4 class="text-2xl font-black text-white mb-4 uppercase tracking-tight">Tiffin Service</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Subscription-based meal planning for vendors and customers. Built for efficient order management.</p>
+                    </div>
+                    <div class="relative z-10">
+                        <span class="text-[10px] font-black text-purple-400 uppercase tracking-widest">Django // SQLite // CSS</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -242,15 +344,12 @@
     <footer class="bg-zinc-950 text-white py-24 px-6 relative overflow-hidden border-t border-purple-500/10">
         <div class="max-w-4xl mx-auto text-center relative z-10">
             <h2 class="text-6xl font-black mb-12 tracking-tighter" data-aos="fade-up">Let's build <br><span class="text-purple-500 underline decoration-4 underline-offset-8">the future</span>.</h2>
-
             <div class="flex flex-col gap-4 mb-12">
                 <a href="mailto:lavanyababu153@gmail.com" class="text-2xl md:text-4xl font-mono text-slate-400 hover:text-purple-400 transition">lavanyababu153@gmail.com</a>
                 <a href="tel:+918086857303" class="text-xl md:text-2xl font-mono text-purple-500 hover:text-purple-300 transition">+918086857303</a>
             </div>
-
             <div class="flex justify-center gap-10 mt-16">
                 <a href="https://github.com/lavanyababu153" target="_blank" class="text-slate-500 hover:text-purple-500 transition text-2xl"><i class="fab fa-github"></i></a>
-                <a href="#" class="text-slate-500 hover:text-purple-500 transition text-2xl"><i class="fab fa-linkedin"></i></a>
             </div>
             <p class="mt-20 text-slate-600 text-[10px] font-black uppercase tracking-[0.5em]">Kochi // Kerala // 2026</p>
         </div>
@@ -258,19 +357,12 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 100
-        });
-
-        // Unique Feature: Custom Cursor Follow Logic
+        AOS.init({ duration: 800, once: true, offset: 100 });
         const cursor = document.getElementById('custom-cursor');
         document.addEventListener('mousemove', e => {
             cursor.style.left = e.clientX - 10 + 'px';
             cursor.style.top = e.clientY - 10 + 'px';
         });
-
         document.addEventListener('mousedown', () => cursor.style.transform = 'scale(0.8)');
         document.addEventListener('mouseup', () => cursor.style.transform = 'scale(1)');
     </script>
